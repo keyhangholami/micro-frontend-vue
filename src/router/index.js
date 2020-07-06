@@ -11,7 +11,12 @@ const routes = [
     component: Home
   },
   {
-    path: "/about",
+    path: "/vueMFApp",
+    name: "Home",
+    component: Home
+  },
+  {
+    path: "/vueMFApp/about",
     name: "About",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

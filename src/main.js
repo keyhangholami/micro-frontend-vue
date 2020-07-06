@@ -15,12 +15,16 @@ const app = new Vue({
 window.renderVueMFApp = (containerId, history) => {
   // TODO: we need to map the "history" from the parent to our Vue app
   console.log("Function: renderMFApp, Line 30 => ", history);
-  app.$mount(`#${containerId}`);
+
+  const div = document.createElement("div");
+  div.id = "app";
+  document.getElementById(containerId).appendChild(div);
+  app.$mount("#app");
 };
 
 // unmount micro frontend function
 window.unmountVueMFApp = containerId => {
-  Vue.$delete(document.getElementById(containerId));
+  app.$delete(document.getElementById(containerId));
 };
 
 // Mount to root if it is not a micro frontend

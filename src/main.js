@@ -24,7 +24,8 @@ window.renderVueMFApp = (containerId, history) => {
 
 // unmount micro frontend function
 window.unmountVueMFApp = containerId => {
-  app.$delete(document.getElementById(containerId));
+  console.log("Function: unmountVueMFApp =>", containerId, "destroyed");
+  app.$destroy();
 };
 
 // Mount to root if it is not a micro frontend
